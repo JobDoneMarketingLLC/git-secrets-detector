@@ -1,20 +1,13 @@
-After uploading the pre-commit file to your server, make it executable with:
-bash
+After saving the pre-commit file to your system, make it executable with:
 
 chmod +x /path/to/pre-commit
 
 For example, if you copy it to a repository’s hooks directory:
-bash
 
-cp pre-commit /path/to/repo/.git/hooks/pre-commit
-chmod +x /path/to/repo/.git/hooks/pre-commit
+cp pre-commit /path/to/repo/.git/hooks/pre-commitchmod +x /path/to/repo/.git/hooks/pre-commit
 
 For global installation:
-bash
 
-mkdir -p ~/.git-hooks
-cp pre-commit ~/.git-hooks/pre-commit
-chmod +x ~/.git-hooks/pre-commit
-git config --global core.hooksPath ~/.git-hooks
+mkdir -p ~/.git-hookscp pre-commit ~/.git-hooks/pre-commitchmod +x ~/.git-hooks/pre-commitgit config --global core.hooksPath ~/.git-hooks
 
-The executable bit is stored in the file’s permission bits, not in the content, so it must be set on the server after the file is placed there.
+Note: The executable bit is stored in the file’s permission metadata, not in the file content itself. Because of this, it must be explicitly set via chmod after the file is placed on your machine or server.
